@@ -1,0 +1,6 @@
+{
+  "name": "엄궁역 트라비스 하늘채 - 로얄층 & VIP 분양관",
+  "description": "엄궁역 트라비스 하늘채 로얄층 및 VIP 담당 김세비 실장(1800-6559) 공식 분양 안내 페이지. 사업개요, 위치도, 단지배치도, 동호수표, 프리미엄7, 커뮤니티, 스카이라운지, 시스템 및 타입별 평면과 공급금액 완벽 수록.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

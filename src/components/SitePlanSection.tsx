@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
-import { Layers, Compass, ArrowUpDown, Building, CheckCircle2, Maximize } from 'lucide-react';
+import { Layers, Compass, Maximize2, X, Sparkles, Building, CheckCircle2 } from 'lucide-react';
 import { SITE_PLAN_INFO } from '../data/apartmentData';
+import sitePlanImg from '../assets/images/site_plan_1789302318994.jpg';
 
 export const SitePlanSection: React.FC = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedDong, setSelectedDong] = useState<string>('102동');
 
   const selectedBuildingData = SITE_PLAN_INFO.buildings.find(b => b.dong === selectedDong) || SITE_PLAN_INFO.buildings[1];
@@ -11,8 +13,8 @@ export const SitePlanSection: React.FC = () => {
     <section id="siteplan" className="py-16 bg-slate-50 border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-50 text-indigo-800 text-xs font-bold mb-3 border border-indigo-200">
+        <div className="text-center max-w-3xl mx-auto mb-10">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-indigo-50 text-indigo-800 text-xs font-bold mb-3 border border-indigo-200">
             <Layers className="w-3.5 h-3.5 text-indigo-600" />
             <span>남향 위주 혁신설계 및 평지 대단지</span>
           </div>
@@ -24,134 +26,139 @@ export const SitePlanSection: React.FC = () => {
           </p>
         </div>
 
-        {/* Feature Overview Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
-          {SITE_PLAN_INFO.features.map((feat, idx) => (
-            <div key={idx} className="p-4 rounded-xl bg-white border border-slate-200 shadow-xs">
-              <div className="text-xs font-bold text-indigo-600 mb-1">{feat.label}</div>
-              <div className="text-sm font-semibold text-slate-800">{feat.value}</div>
+        {/* [MAIN IMAGE SHOWCASE]: High-Resolution 3D Site Plan Master Image */}
+        <div className="relative rounded-3xl overflow-hidden border-2 border-indigo-300 shadow-xl bg-slate-950 mb-10 group">
+          <div className="relative aspect-[16/9] w-full overflow-hidden">
+            <img
+              src={sitePlanImg}
+              alt="엄궁역 트라비스 하늘채 단지배치도 조감도"
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              referrerPolicy="no-referrer"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-black/20 pointer-events-none" />
+
+            {/* Top Left Badge */}
+            <div className="absolute top-4 left-4 z-10 flex items-center gap-2">
+              <span className="px-3 py-1 rounded-full bg-slate-950/80 backdrop-blur-md text-indigo-300 text-xs font-black border border-indigo-400/50 shadow-md flex items-center gap-1.5">
+                <Compass className="w-3.5 h-3.5 text-indigo-400" />
+                <span>남향 위주 13개동 마스터 단지배치도</span>
+              </span>
             </div>
-          ))}
+
+            {/* Top Right Zoom Button */}
+            <button
+              onClick={() => setIsModalOpen(true)}
+              className="absolute top-4 right-4 z-10 px-3.5 py-1.5 rounded-xl bg-slate-950/80 hover:bg-indigo-600 text-white text-xs font-bold backdrop-blur-md border border-white/20 hover:border-indigo-400 shadow-lg flex items-center gap-1.5 transition-all"
+            >
+              <Maximize2 className="w-3.5 h-3.5" />
+              <span>배치도 크게보기</span>
+            </button>
+
+            {/* Bottom Floating Bar */}
+            <div className="absolute bottom-4 left-4 right-4 z-10 p-4 rounded-2xl bg-slate-950/85 backdrop-blur-md border border-white/10 text-white flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+              <div>
+                <div className="flex items-center gap-2 text-xs font-bold text-amber-400">
+                  <Sparkles className="w-4 h-4 text-amber-400" />
+                  <span>최대 76m 넉넉한 동간거리 · 지상 차 없는 안심 공원형 단지</span>
+                </div>
+                <div className="text-xs text-slate-300 mt-0.5">
+                  101동~113동 총 13개동 판상형·타워형 조화 및 22층/33층 듀얼 스카이라운지
+                </div>
+              </div>
+              <button
+                onClick={() => setIsModalOpen(true)}
+                className="self-start sm:self-auto px-3.5 py-1.5 rounded-lg bg-indigo-500 hover:bg-indigo-400 text-white font-black text-xs transition-colors shrink-0"
+              >
+                고화질 원본 확대
+              </button>
+            </div>
+          </div>
         </div>
 
-        {/* Interactive Building Selector & Map Diagram */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          {/* Left: Building Tabs */}
-          <div className="lg:col-span-4 space-y-4">
-            <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
-              <div className="flex items-center justify-between mb-3 border-b border-slate-100 pb-2">
-                <span className="text-xs font-bold text-slate-700">13개동별 세부 스펙 선택</span>
-                <span className="text-[11px] text-slate-400">클릭 시 상세 정보</span>
-              </div>
-              <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-3 gap-2">
-                {SITE_PLAN_INFO.buildings.map((b) => (
-                  <button
-                    key={b.dong}
-                    onClick={() => setSelectedDong(b.dong)}
-                    className={`p-2.5 rounded-xl text-center text-xs font-bold transition-all ${
-                      selectedDong === b.dong
-                        ? 'bg-amber-500 text-slate-950 shadow-md scale-102 ring-2 ring-amber-400'
-                        : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
-                    }`}
-                  >
-                    <div>{b.dong}</div>
-                    <div className="text-[10px] opacity-80 font-normal">{b.floors}</div>
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            {/* Selected Building Detail Card */}
-            <div className="bg-slate-900 text-white p-5 rounded-2xl border border-slate-800 shadow-md">
-              <div className="flex items-center justify-between mb-3">
-                <h4 className="text-lg font-black text-amber-400">{selectedBuildingData.dong} 상세 안내</h4>
-                <span className="text-xs px-2 py-0.5 rounded bg-slate-800 text-slate-300 font-semibold">
-                  최고 {selectedBuildingData.floors}
-                </span>
-              </div>
-              <div className="space-y-2 text-xs text-slate-300">
-                <div className="flex justify-between py-1 border-b border-slate-800">
-                  <span className="text-slate-400">배치 주택형</span>
-                  <span className="font-bold text-white">{selectedBuildingData.types.join(', ')}</span>
-                </div>
-                <div className="flex justify-between py-1 border-b border-slate-800">
-                  <span className="text-slate-400">엘리베이터 구성</span>
-                  <span className="font-semibold text-emerald-400">{selectedBuildingData.elevators}</span>
-                </div>
-                {selectedBuildingData.note && (
-                  <div className="p-2.5 rounded-lg bg-amber-500/20 border border-amber-500/40 text-amber-300 text-xs font-semibold mt-2">
-                    ★ {selectedBuildingData.note}
-                  </div>
-                )}
-              </div>
+        {/* 13 Dong Quick Navigator & Specification Card */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+          <div className="lg:col-span-8 bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+            <h3 className="text-sm font-bold text-slate-800 mb-3 flex items-center justify-between">
+              <span>단지 내 13개동 바로 선택</span>
+              <span className="text-xs text-slate-400 font-normal">동을 클릭하여 층수와 전용타입을 확인하세요</span>
+            </h3>
+            <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-7 gap-2">
+              {SITE_PLAN_INFO.buildings.map((b) => (
+                <button
+                  key={b.dong}
+                  onClick={() => setSelectedDong(b.dong)}
+                  className={`p-2.5 rounded-xl text-center text-xs font-bold transition-all ${
+                    selectedDong === b.dong
+                      ? 'bg-indigo-600 text-white shadow-md ring-2 ring-indigo-400 scale-105'
+                      : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
+                  }`}
+                >
+                  <div className="font-extrabold">{b.dong}</div>
+                  <div className="text-[10px] opacity-80">{b.floors}</div>
+                </button>
+              ))}
             </div>
           </div>
 
-          {/* Right: Architectural Level & Distance Visualizer */}
-          <div className="lg:col-span-8 space-y-6">
-            {/* Visual Level Difference Box (Page 34) */}
-            <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
-              <div className="flex items-center justify-between mb-4">
-                <div className="flex items-center gap-2">
-                  <ArrowUpDown className="w-5 h-5 text-indigo-600" />
-                  <h4 className="font-bold text-slate-900 text-base">주변 단지 대비 지형 레벨차 (평지 프리미엄)</h4>
-                </div>
-                <span className="text-xs px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 font-semibold">
-                  고바위 없는 평지
-                </span>
-              </div>
-
-              <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-600 leading-relaxed mb-4">
-                타 단지는 지형 경사로 인해 최고 +50.0m(더샵리오몬트), +42.0m(엄궁롯데캐슬리버) 언덕에 위치하지만, 
-                <strong> 엄궁역 트라비스 하늘채는 엄궁역(+5.3m) 및 엄궁초(+14m)와 평탄하게 이어지는 대표 평지 단지</strong>로 보행 편의성과 시세 방어력이 월등합니다.
-              </div>
-
-              {/* Comparative Level Bar */}
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-center">
-                <div className="p-3 rounded-xl bg-emerald-50 border border-emerald-200">
-                  <div className="text-[11px] text-emerald-700 font-semibold">5호선 엄궁역 지하철</div>
-                  <div className="text-lg font-black text-emerald-900 mt-0.5">+5.3m</div>
-                  <div className="text-[10px] text-emerald-600">단지 직결 통로</div>
-                </div>
-                <div className="p-3 rounded-xl bg-blue-50 border border-blue-200">
-                  <div className="text-[11px] text-blue-700 font-semibold">트라비스 하늘채 (본 단지)</div>
-                  <div className="text-lg font-black text-blue-900 mt-0.5">+15.3m</div>
-                  <div className="text-[10px] text-blue-600">완만한 평지 대단지</div>
-                </div>
-                <div className="p-3 rounded-xl bg-slate-100 border border-slate-200 opacity-80">
-                  <div className="text-[11px] text-slate-600">엄궁 롯데캐슬리버</div>
-                  <div className="text-lg font-bold text-slate-700 mt-0.5">+42.0m</div>
-                  <div className="text-[10px] text-slate-500">경사 지형 단차</div>
-                </div>
-                <div className="p-3 rounded-xl bg-slate-100 border border-slate-200 opacity-80">
-                  <div className="text-[11px] text-slate-600">더샵 리오몬트</div>
-                  <div className="text-lg font-bold text-slate-700 mt-0.5">+50.0m</div>
-                  <div className="text-[10px] text-slate-500">고지대 경사 단지</div>
-                </div>
-              </div>
+          <div className="lg:col-span-4 bg-indigo-900 text-white p-6 rounded-2xl shadow-md border border-indigo-700">
+            <div className="flex items-center justify-between border-b border-indigo-700 pb-3 mb-3">
+              <span className="text-xl font-black text-amber-300">{selectedBuildingData.dong} 정보</span>
+              <span className="text-xs px-2 py-0.5 rounded-full bg-indigo-800 text-indigo-200 font-semibold">
+                최고 {selectedBuildingData.floors}
+              </span>
             </div>
-
-            {/* In-Between Building Distance (인동거리 Page 33) */}
-            <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
-              <div className="flex items-center gap-2 mb-3">
-                <Maximize className="w-5 h-5 text-amber-600" />
-                <h4 className="font-bold text-slate-900 text-base">최대 76.16m 쾌적 인동거리</h4>
+            <div className="space-y-2 text-xs">
+              <div>
+                <span className="text-indigo-300 block mb-1">구성 타입:</span>
+                <div className="flex flex-wrap gap-1.5">
+                  {selectedBuildingData.types.map((t, idx) => (
+                    <span key={idx} className="px-2 py-0.5 rounded bg-indigo-800 text-white font-bold text-[11px]">
+                      {t}
+                    </span>
+                  ))}
+                </div>
               </div>
-              <p className="text-xs text-slate-600 mb-4">
-                동간 거리가 54m~76.16m에 달해 사생활 보호 및 전 세대 남향 위주 풍부한 햇살과 바람길을 누립니다.
-              </p>
-              <div className="flex flex-wrap gap-2 text-xs font-semibold">
-                <span className="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-700 border border-slate-200">104동 ↔ 107동: 76.16m</span>
-                <span className="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-700 border border-slate-200">104동 ↔ 108동: 68m</span>
-                <span className="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-700 border border-slate-200">103동 ↔ 109동: 74m</span>
-                <span className="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-700 border border-slate-200">109동 ↔ 111동: 61m</span>
-                <span className="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-700 border border-slate-200">111동 ↔ 113동: 66m</span>
-                <span className="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-700 border border-slate-200">101동 ↔ 104동: 64m</span>
+              <div className="pt-2">
+                <span className="text-indigo-300 block mb-0.5">승강기 정보:</span>
+                <span className="text-slate-100 font-semibold">{selectedBuildingData.elevators}</span>
               </div>
             </div>
           </div>
         </div>
       </div>
+
+      {/* High-Resolution Full-Screen Image Lightbox */}
+      {isModalOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/95 backdrop-blur-md animate-fadeIn">
+          <div className="relative max-w-6xl w-full bg-slate-900 rounded-3xl overflow-hidden border border-indigo-500/40 shadow-2xl">
+            <div className="flex items-center justify-between px-6 py-4 border-b border-slate-800 bg-slate-950">
+              <div className="flex items-center gap-2">
+                <span className="px-2.5 py-0.5 rounded bg-indigo-500 text-white font-black text-xs">
+                  단지배치도 원본 고화질
+                </span>
+                <span className="text-sm font-bold text-white">
+                  엄궁역 트라비스 하늘채 13개동 전체 배치도 및 단지 내 동선
+                </span>
+              </div>
+              <button
+                onClick={() => setIsModalOpen(false)}
+                className="p-2 rounded-full text-slate-400 hover:text-white hover:bg-slate-800 transition-colors"
+                aria-label="닫기"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+            <div className="relative aspect-video w-full bg-black">
+              <img
+                src={sitePlanImg}
+                alt="엄궁역 트라비스 하늘채 단지배치도 고화질 원본"
+                className="w-full h-full object-contain"
+                referrerPolicy="no-referrer"
+              />
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 };

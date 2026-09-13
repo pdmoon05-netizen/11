@@ -14,7 +14,7 @@ export const SitePlanSection: React.FC = () => {
         <div className="text-center max-w-3xl mx-auto mb-12">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-50 text-indigo-800 text-xs font-bold mb-3 border border-indigo-200">
             <Layers className="w-3.5 h-3.5 text-indigo-600" />
-            <span>31P · 남향 위주 혁신설계 및 평지 대단지</span>
+            <span>남향 위주 혁신설계 및 평지 대단지</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
             {SITE_PLAN_INFO.title}

@@ -48,7 +48,7 @@ export const FloorPlanPriceSection: React.FC<FloorPlanPriceSectionProps> = ({ on
         <div className="text-center max-w-3xl mx-auto mb-10">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100 text-amber-900 text-xs font-bold mb-3 border border-amber-300">
             <Sparkles className="w-3.5 h-3.5 text-amber-600" />
-            <span>66P~98P · 전 타입 평면도 및 동·호수별 공급금액 완전 분석</span>
+            <span>전 타입 평면도 및 동·호수별 공급금액 완전 분석</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
             평면안내 & 공급금액
@@ -410,7 +410,7 @@ export const FloorPlanPriceSection: React.FC<FloorPlanPriceSectionProps> = ({ on
               {/* Balcony Cost Table */}
               <div>
                 <h4 className="font-bold text-slate-900 text-sm mb-3">
-                  {selectedUnit.name} 발코니 확장 공사비 (99P)
+                  {selectedUnit.name} 발코니 확장 공사비
                 </h4>
                 <div className="overflow-x-auto">
                   <table className="w-full text-xs text-left border-collapse">
@@ -448,10 +448,10 @@ export const FloorPlanPriceSection: React.FC<FloorPlanPriceSectionProps> = ({ on
                 </div>
               </div>
 
-              {/* Major Custom Upgrades (100P) */}
+              {/* Major Custom Upgrades */}
               <div>
                 <h4 className="font-bold text-slate-900 text-sm mb-2">
-                  선택 유상 옵션 품목 가이드 (100P)
+                  선택 유상 옵션 품목 가이드
                 </h4>
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
                   <div className="p-3 bg-slate-50 border border-slate-200 rounded-lg">

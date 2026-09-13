@@ -23,7 +23,7 @@ export const LocationSection: React.FC = () => {
         <div className="text-center max-w-3xl mx-auto mb-12">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 text-emerald-800 text-xs font-bold mb-3 border border-emerald-200">
             <MapPin className="w-3.5 h-3.5 text-emerald-600" />
-            <span>27P · 사통팔달 교통망과 풍부한 인프라</span>
+            <span>사통팔달 교통망과 풍부한 인프라</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
             {LOCATION_INFO.title}

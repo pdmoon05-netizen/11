@@ -19,8 +19,8 @@ export const BuildingUnitTable: React.FC<BuildingUnitTableProps> = ({ onOpenCons
     { type: '84B', color: 'bg-blue-600 text-white', label: '84B (271세대)', hex: '#2563eb' },
     { type: '84C', color: 'bg-indigo-800 text-white', label: '84C (36세대)', hex: '#3730a3' },
     { type: '101B', color: 'bg-purple-600 text-white', label: '101B (17세대)', hex: '#9333ea' },
-    { type: '133P', color: 'bg-slate-700 text-white', label: '133P (1세대)', hex: '#334155' },
-    { type: '155P', color: 'bg-amber-600 text-white', label: '155P (1세대)', hex: '#d97706' },
+    { type: '133PENT', color: 'bg-slate-700 text-white', label: '133 펜트 (1세대)', hex: '#334155' },
+    { type: '155PENT', color: 'bg-amber-600 text-white', label: '155 펜트 (1세대)', hex: '#d97706' },
     { type: '필로티', color: 'bg-slate-200 text-slate-700', label: '필로티/주민공동', hex: '#e2e8f0' },
   ];
 
@@ -28,7 +28,7 @@ export const BuildingUnitTable: React.FC<BuildingUnitTableProps> = ({ onOpenCons
   const group101to106 = [
     { dong: '101동', maxFloor: 32, lines: ['84A', '84B', '84A', '84A'], note: '최고 32층 판상형' },
     { dong: '102동', maxFloor: 36, lines: ['101B', '101A', '84A', '84B', '84A'], note: '22F 스카이라운지' },
-    { dong: '103동', maxFloor: 36, lines: ['101B', '101A', '84A', '84B', '84A', '155P'], note: '최고 36층 랜드마크' },
+    { dong: '103동', maxFloor: 36, lines: ['101B', '101A', '84A', '84B', '84A', '155 펜트'], note: '최고 36층 랜드마크' },
     { dong: '104동', maxFloor: 29, lines: ['84C', '84A', '84A', '84B', '84A'], note: '최고 29층 판상·타워' },
     { dong: '105동', maxFloor: 22, lines: ['59A2', '59A2', '임대', '임대'], note: '지하철 인접동' },
     { dong: '106동', maxFloor: 29, lines: ['59A1', '59A1', '59A1', '59A1'], note: '59A1 전용동' },
@@ -41,7 +41,7 @@ export const BuildingUnitTable: React.FC<BuildingUnitTableProps> = ({ onOpenCons
     { dong: '109동', maxFloor: 29, lines: ['84B', '84A', '84A', '84B', '84A'], note: '84타입 29층' },
     { dong: '110동', maxFloor: 35, lines: ['101B', '101A', '84A', '84B', '84A'], note: '33F 스카이라운지' },
     { dong: '111동', maxFloor: 29, lines: ['59A1', '59A1', '59A1', '59A1'], note: '59A1 전용동' },
-    { dong: '112동', maxFloor: 28, lines: ['84C', '84A', '84A', '84B', '84A', '133P'], note: '26F 133P 펜트' },
+    { dong: '112동', maxFloor: 28, lines: ['84C', '84A', '84A', '84B', '84A', '133 펜트'], note: '26F 133 펜트' },
     { dong: '113동', maxFloor: 22, lines: ['59A2', '59A2', '59A2', '59A2'], note: '59A2 전용동' },
   ];
 
@@ -54,7 +54,7 @@ export const BuildingUnitTable: React.FC<BuildingUnitTableProps> = ({ onOpenCons
         <div className="text-center max-w-3xl mx-auto mb-10">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-800 text-xs font-bold mb-3 border border-blue-200">
             <Grid3X3 className="w-3.5 h-3.5 text-blue-600" />
-            <span>48P · 총 1,670세대 중 일반분양 총 1,061세대</span>
+            <span>총 1,670세대 중 일반분양 총 1,061세대</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
             동호수 배치표
@@ -73,7 +73,7 @@ export const BuildingUnitTable: React.FC<BuildingUnitTableProps> = ({ onOpenCons
                   : 'text-slate-600 hover:text-slate-900'
               }`}
             >
-              101동 ~ 106동 (48P)
+              101동 ~ 106동
             </button>
             <button
               onClick={() => setActiveGroup('107-113')}
@@ -83,7 +83,7 @@ export const BuildingUnitTable: React.FC<BuildingUnitTableProps> = ({ onOpenCons
                   : 'text-slate-600 hover:text-slate-900'
               }`}
             >
-              107동 ~ 113동 (49P)
+              107동 ~ 113동
             </button>
           </div>
         </div>

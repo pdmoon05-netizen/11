@@ -22,7 +22,6 @@ export const AGENT_INFO = {
 
 export const PROJECT_OVERVIEW = {
   title: "사업개요",
-  page: "24P",
   projectName: "엄궁1구역 재개발정비사업 (엄궁역 트라비스 하늘채)",
   location: "부산광역시 사상구 엄궁동 412번지 일원",
   siteArea: "78,087.00 ㎡ (23,621.32 평)",
@@ -51,7 +50,6 @@ export const PROJECT_OVERVIEW = {
 
 export const LOCATION_INFO = {
   title: "위치도 및 프리미엄 입지환경",
-  page: "27P",
   description: "사상~하단선 엄궁역 단지 직통 연결, 초품아 교육특구, 더현대 부산 & 엄궁 복합체육센터 인프라",
   trafficSubway: {
     name: "사상-하단선 5호선 엄궁역 [3공구]",
@@ -100,7 +98,6 @@ export const LOCATION_INFO = {
 
 export const SITE_PLAN_INFO = {
   title: "단지배치도",
-  page: "31P",
   description: "남향 위주의 단지배치와 최대 76m 넉넉한 인동거리, 지형 단차를 극복한 혁신 평지 설계",
   totalBuildings: "13개동 (101동 ~ 113동)",
   features: [
@@ -320,7 +317,6 @@ export const SKY_COMMUNITY_INFO: SkyCommunityItem[] = [
 
 export const SYSTEM_INFO = {
   title: "엄궁역 트라비스 하늘채만의 특화 시스템",
-  page: "65P",
   categories: [
     {
       title: "생활편의 시스템 (Comfortable Life)",

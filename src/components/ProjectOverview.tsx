@@ -10,7 +10,7 @@ export const ProjectOverview: React.FC = () => {
         <div className="text-center max-w-3xl mx-auto mb-12">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-800 text-xs font-bold mb-3 border border-blue-200">
             <FileText className="w-3.5 h-3.5 text-blue-600" />
-            <span>24P · 서부산의 新주거중심에서 브랜드 타운의 완성작</span>
+            <span>서부산의 新주거중심에서 브랜드 타운의 완성작</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
             {PROJECT_OVERVIEW.title}
@@ -74,7 +74,7 @@ export const ProjectOverview: React.FC = () => {
             <div className="bg-amber-50 rounded-2xl p-5 border border-amber-200 text-amber-900">
               <div className="flex items-center gap-2 font-bold text-sm mb-2 text-amber-950">
                 <CheckCircle2 className="w-4 h-4 text-amber-600" />
-                <span>24P 핵심 체크 포인트</span>
+                <span>사업개요 핵심 체크 포인트</span>
               </div>
               <ul className="text-xs space-y-1.5 text-amber-800">
                 <li>• 총 1,670세대 중 일반분양 1,061세대로 로얄층 및 좋은 동호수 선택의 폭이 넓음</li>

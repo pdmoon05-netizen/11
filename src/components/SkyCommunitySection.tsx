@@ -14,7 +14,7 @@ export const SkyCommunitySection: React.FC = () => {
         <div className="text-center max-w-3xl mx-auto mb-12">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/20 text-amber-300 text-xs font-bold mb-3 border border-amber-500/40">
             <Sparkles className="w-3.5 h-3.5 text-amber-400" />
-            <span>60P · 서부산에 없던 스카이 커뮤니티 라이프와 프리미엄 게스트하우스</span>
+            <span>서부산에 없던 스카이 커뮤니티 라이프와 프리미엄 게스트하우스</span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight">
             서부산 최초 <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-yellow-200 to-amber-400">SKY Community</span>
@@ -90,13 +90,13 @@ export const SkyCommunitySection: React.FC = () => {
               </div>
             </div>
 
-            {/* Right: Panoramic Sky View Visualizer (63P, 64P Sunset & Night View) */}
+            {/* Right: Panoramic Sky View Visualizer (Sunset & Night View) */}
             <div className="lg:col-span-6 space-y-4">
               {/* Sunset View Visual Card */}
               <div className="rounded-xl overflow-hidden border border-amber-500/30 bg-gradient-to-r from-orange-950/60 via-amber-950/40 to-slate-900 p-5">
                 <div className="flex items-center gap-2 text-amber-300 font-bold text-sm mb-2">
                   <Sunset className="w-4 h-4 text-amber-400" />
-                  <span>승학산 낙조 뷰 (63P)</span>
+                  <span>승학산 낙조 뷰</span>
                 </div>
                 <p className="text-xs text-slate-300 leading-relaxed">
                   낙동강을 붉게 물들이는 환상적인 일몰과 승학산의 능선이 펼쳐지는 골든 아워 전망.
@@ -108,7 +108,7 @@ export const SkyCommunitySection: React.FC = () => {
               <div className="rounded-xl overflow-hidden border border-blue-500/30 bg-gradient-to-r from-indigo-950/60 via-slate-900 to-slate-950 p-5">
                 <div className="flex items-center gap-2 text-blue-300 font-bold text-sm mb-2">
                   <Moon className="w-4 h-4 text-blue-400" />
-                  <span>승학산 야경 뷰 & 도심 라이트업 (64P)</span>
+                  <span>승학산 야경 뷰 & 도심 라이트업</span>
                 </div>
                 <p className="text-xs text-slate-300 leading-relaxed">
                   서부산 도심 불빛과 대교 조명이 어우러지는 파노라마 나이트뷰.

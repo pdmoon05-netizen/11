@@ -20,16 +20,16 @@ interface NavigationProps {
 }
 
 export const navItems = [
-  { id: 'premium7', label: 'PREMIUM 7', page: '23P', icon: Sparkles },
-  { id: 'overview', label: '사업개요', page: '24P', icon: Building2 },
-  { id: 'location', label: '위치도·입지', page: '27P', icon: MapPin },
-  { id: 'siteplan', label: '단지배치도', page: '31P', icon: Layers },
-  { id: 'elevation', label: '동호수표', page: '48P', icon: Grid3X3 },
-  { id: 'landscape', label: '단지조경', page: '50P', icon: Trees },
-  { id: 'community', label: '커뮤니티', page: '56P', icon: Users },
-  { id: 'skycommunity', label: '스카이커뮤니티', page: '60P', icon: Eye },
-  { id: 'system', label: '특화시스템', page: '65P', icon: Cpu },
-  { id: 'floorplans', label: '평면 및 공급금액', page: '66~98P', icon: Home, highlight: true },
+  { id: 'premium7', label: 'PREMIUM 7', icon: Sparkles },
+  { id: 'overview', label: '사업개요', icon: Building2 },
+  { id: 'location', label: '위치도·입지', icon: MapPin },
+  { id: 'siteplan', label: '단지배치도', icon: Layers },
+  { id: 'elevation', label: '동호수표', icon: Grid3X3 },
+  { id: 'landscape', label: '단지조경', icon: Trees },
+  { id: 'community', label: '커뮤니티', icon: Users },
+  { id: 'skycommunity', label: '스카이커뮤니티', icon: Eye },
+  { id: 'system', label: '특화시스템', icon: Cpu },
+  { id: 'floorplans', label: '평면 및 공급금액', icon: Home, highlight: true },
 ];
 
 export const Navigation: React.FC<NavigationProps> = ({ activeSection, setActiveSection }) => {
@@ -95,11 +95,6 @@ export const Navigation: React.FC<NavigationProps> = ({ activeSection, setActive
                 >
                   <Icon className="w-3.5 h-3.5 shrink-0" />
                   <span>{item.label}</span>
-                  <span className={`text-[10px] px-1 py-0.2 rounded ${
-                    isActive ? 'bg-slate-950/20 text-slate-950' : 'bg-slate-800 text-slate-400'
-                  }`}>
-                    {item.page}
-                  </span>
                 </button>
               );
             })}

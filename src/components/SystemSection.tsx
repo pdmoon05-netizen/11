@@ -10,7 +10,7 @@ export const SystemSection: React.FC = () => {
         <div className="text-center max-w-3xl mx-auto mb-12">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-50 text-cyan-800 text-xs font-bold mb-3 border border-cyan-200">
             <Cpu className="w-3.5 h-3.5 text-cyan-600" />
-            <span>65P · 첨단 IoT 스마트홈과 안전·웰빙·친환경 에너지 시스템</span>
+            <span>첨단 IoT 스마트홈과 안전·웰빙·친환경 에너지 시스템</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
             {SYSTEM_INFO.title}

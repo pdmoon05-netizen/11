@@ -31,11 +31,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenConsultation }) 
 
   return (
     <section id="hero" className="relative overflow-hidden bg-slate-900 text-white min-h-[750px]">
-      {/* 1P Background Apartment Panorama Image - High Clarity & Vividness */}
+      {/* Background Apartment Panorama Image - High Clarity & Vividness */}
       <div className="absolute inset-0 z-0">
         <img
           src={currentPanorama}
-          alt="엄궁역 트라비스 하늘채 1P 아파트 전경 조감도"
+          alt="엄궁역 트라비스 하늘채 아파트 전경 조감도"
           className="w-full h-full object-cover object-center brightness-105 contrast-105 saturate-110"
           referrerPolicy="no-referrer"
         />
@@ -101,7 +101,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenConsultation }) 
         <div className="text-center mb-4">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-950/80 border border-amber-400/80 text-amber-300 text-xs sm:text-sm font-black tracking-wide shadow-xl backdrop-blur-md">
             <Sparkles className="w-4 h-4 text-amber-400 animate-pulse" />
-            <span>1P · 아파트 전경 조감도 & VIP 특별 분양관</span>
+            <span>아파트 전경 조감도 & VIP 특별 분양관</span>
           </div>
           <h1 className="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight text-white leading-tight drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)] mt-2">
             엄궁역 <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-yellow-200 to-amber-400 drop-shadow">트라비스 하늘채</span>
@@ -240,7 +240,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenConsultation }) 
             <div className="flex items-center justify-between px-6 py-4 border-b border-slate-800 bg-slate-950">
               <div className="flex items-center gap-2">
                 <span className="px-2.5 py-0.5 rounded bg-amber-500 text-slate-950 font-black text-xs">
-                  1P 아파트 전경 초고화질 조감도
+                  아파트 전경 초고화질 조감도
                 </span>
                 <span className="text-sm font-bold text-white hidden sm:inline">
                   엄궁역 트라비스 하늘채 (지하 5층~지상 36층, 13개동 1,670세대)

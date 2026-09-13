@@ -30,7 +30,7 @@ export const Premium7Section: React.FC = () => {
         <div className="text-center max-w-3xl mx-auto mb-12">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-50 text-amber-800 text-xs font-bold mb-3 border border-amber-200">
             <Award className="w-3.5 h-3.5 text-amber-600" />
-            <span>23P · 변화로 새로워질 엄궁 5,000세대 브랜드 타운 대표 평지 대단지</span>
+            <span>변화로 새로워질 엄궁 5,000세대 브랜드 타운 대표 평지 대단지</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
             엄궁역 트라비스 하늘채 <span className="text-amber-600">PREMIUM 7</span>

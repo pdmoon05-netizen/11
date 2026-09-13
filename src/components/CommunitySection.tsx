@@ -14,7 +14,7 @@ export const CommunitySection: React.FC = () => {
         <div className="text-center max-w-3xl mx-auto mb-12">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-50 text-purple-800 text-xs font-bold mb-3 border border-purple-200">
             <Users className="w-3.5 h-3.5 text-purple-600" />
-            <span>56P · 운동, 교육, 여가 등 일상이 더욱 풍요로워지는 원스톱 커뮤니티</span>
+            <span>운동, 교육, 여가 등 일상이 더욱 풍요로워지는 원스톱 커뮤니티</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
             커뮤니티 센터

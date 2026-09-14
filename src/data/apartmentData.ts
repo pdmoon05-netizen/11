@@ -1,9 +1,9 @@
 import { UnitTypeInfo, PremiumItem, LandscapeFeature, CommunityFloor, SkyCommunityItem } from '../types';
 
 export const AGENT_INFO = {
-  name: "김세비 실장",
-  phone: "1800-6559",
-  cleanPhone: "18006559",
+  name: "홍길동부장",
+  phone: "010-0000-0000",
+  cleanPhone: "01000000000",
   role: "아파트 분양",
   roleDetail: "엄궁역 트라비스 하늘채 공식 분양 총괄상담",
   feature: "로얄층 및 VIP 담당",

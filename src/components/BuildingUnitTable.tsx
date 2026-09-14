@@ -74,7 +74,7 @@ export const BuildingUnitTable: React.FC<BuildingUnitTableProps> = ({ onOpenCons
               <div>
                 <div className="flex items-center gap-2 text-xs font-bold text-amber-400">
                   <Sparkles className="w-4 h-4 text-amber-400" />
-                  <span>김세비 실장 특별 관리: 103동·110동 고층 스카이뷰 및 판상형 로얄 라인</span>
+                  <span>{AGENT_INFO.name} 특별 관리: 103동·110동 고층 스카이뷰 및 판상형 로얄 라인</span>
                 </div>
                 <div className="text-xs text-slate-300 mt-0.5">
                   총 1,061세대 일반분양 물량 중 선호도 높은 로얄층 우선 배정 상담 가능
